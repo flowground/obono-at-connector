@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "registrierkasseUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "format": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "export",
+                "beleg",
+                "uuidlist"
+            ],
+            "default": "export"
+        },
+        "order": {
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "default": "asc"
+        },
+        "limit": {
+            "type": "integer"
+        },
+        "offset": {
+            "type": "integer",
+            "default": 0
+        },
+        "before": {
+            "type": "string"
+        },
+        "after": {
+            "type": "string"
+        },
+        "gte": {
+            "type": "integer"
+        },
+        "lte": {
+            "type": "integer"
+        }
+    }
+}

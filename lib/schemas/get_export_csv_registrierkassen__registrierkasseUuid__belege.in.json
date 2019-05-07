@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "registrierkasseUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "before": {
+            "type": "string"
+        },
+        "after": {
+            "type": "string"
+        },
+        "posten": {
+            "type": "boolean"
+        }
+    }
+}

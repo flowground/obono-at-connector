@@ -1,0 +1,189 @@
+{
+    "type": "object",
+    "properties": {
+        "registrierkasseUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "belegUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The `Beleg` to be signed by the \"Signaturerstellungseinheit\" and stored in the \"Datenerfassungsprotokoll\".",
+            "properties": {
+                "Kunde": {
+                    "type": "string"
+                },
+                "Notizen": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "Posten": {
+                    "items": {
+                        "properties": {
+                            "Bezeichnung": {
+                                "type": "string"
+                            },
+                            "BruttoBetrag": {
+                                "description": "The amount in cents",
+                                "type": "integer"
+                            },
+                            "Externer-Beleg-Belegkreis": {
+                                "type": "string"
+                            },
+                            "Externer-Beleg-Bezeichnung": {
+                                "type": "string"
+                            },
+                            "Externer-Beleg-Referenz": {
+                                "type": "string"
+                            },
+                            "Menge": {
+                                "type": "integer"
+                            },
+                            "NettoBetrag": {
+                                "description": "The amount in cents",
+                                "type": "integer"
+                            },
+                            "Satz": {
+                                "enum": [
+                                    "NORMAL",
+                                    "ERMAESSIGT1",
+                                    "ERMAESSIGT2",
+                                    "BESONDERS",
+                                    "NULL"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Bezeichnung",
+                            "Satz",
+                            "Menge",
+                            "NettoBetrag",
+                            "BruttoBetrag"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "Rabatte": {
+                    "items": {
+                        "properties": {
+                            "Betrag-Brutto": {
+                                "description": "The amount in cents",
+                                "type": "integer"
+                            },
+                            "Betrag-Netto": {
+                                "description": "The amount in cents",
+                                "type": "integer"
+                            },
+                            "Bezeichnung": {
+                                "type": "string"
+                            },
+                            "Satz": {
+                                "enum": [
+                                    "NORMAL",
+                                    "ERMAESSIGT1",
+                                    "ERMAESSIGT2",
+                                    "BESONDERS",
+                                    "NULL"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Bezeichnung",
+                            "Betrag-Netto",
+                            "Betrag-Brutto"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "Storno": {
+                    "description": "Storno?",
+                    "type": "boolean"
+                },
+                "Training": {
+                    "description": "Training?",
+                    "type": "boolean"
+                },
+                "Zahlungen": {
+                    "items": {
+                        "properties": {
+                            "Betrag": {
+                                "description": "The amount in cents",
+                                "type": "integer"
+                            },
+                            "Bezeichnung": {
+                                "type": "string"
+                            },
+                            "Referenz": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Bezeichnung",
+                            "Betrag"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "Externer_Beleg_Belegkreis": {
+                    "type": "string"
+                },
+                "Externer_Beleg_Bezeichnung": {
+                    "type": "string"
+                },
+                "Externer_Beleg_Referenz": {
+                    "type": "string"
+                },
+                "Storno_Beleg_UUID": {
+                    "description": "The `Beleg-UUID` property of the `Beleg` to be cancelled",
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "Storno_Text": {
+                    "type": "string"
+                },
+                "Unternehmen_Adresse1": {
+                    "type": "string"
+                },
+                "Unternehmen_Adresse2": {
+                    "type": "string"
+                },
+                "Unternehmen_Fusszeile": {
+                    "type": "string"
+                },
+                "Unternehmen_ID": {
+                    "type": "string"
+                },
+                "Unternehmen_ID_Typ": {
+                    "enum": [
+                        "steuernummer",
+                        "uid",
+                        "gln"
+                    ],
+                    "type": "string"
+                },
+                "Unternehmen_Kopfzeile": {
+                    "type": "string"
+                },
+                "Unternehmen_Name": {
+                    "type": "string"
+                },
+                "Unternehmen_Ort": {
+                    "type": "string"
+                },
+                "Unternehmen_PLZ": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

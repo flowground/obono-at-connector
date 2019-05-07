@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "registrierkasseUuid": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

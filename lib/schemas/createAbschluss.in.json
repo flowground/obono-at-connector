@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "registrierkasseUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "Abschluss_Beginn_Datum_Uhrzeit": {
+                    "format": "iso8601-date-time",
+                    "type": "string"
+                },
+                "Abschluss_Ende_Datum_Uhrzeit": {
+                    "format": "iso8601-date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Abschluss-Beginn-Datum-Uhrzeit",
+                "Abschluss-Ende-Datum-Uhrzeit"
+            ],
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,330 @@
+{
+    "title": "obono RKSV",
+    "description": "Provides a RESTful API for interacting with virtual cash registers and creating receipts that are conform with the Registrierkassensicherheitsverordnung (RKSV).\n\nYou may find our [automatically generated clients](./clients) for various programming languages and environments helpful...\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/obono.at/1.3.4.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://app.obono.at/api/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "username": {
+                "label": "Username (basicAuth)",
+                "viewClass": "TextFieldView",
+                "note": "HTTP Basic Authentication."
+            },
+            "password": {
+                "label": "Password (basicAuth)",
+                "viewClass": "TextFieldView",
+                "note": "HTTP Basic Authentication."
+            },
+            "jwt": {
+                "label": "Authorization (jwt)",
+                "viewClass": "TextFieldView",
+                "note": "A JSON Web Token (JWT) used for access control and authorization."
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_auth": {
+            "main": "./lib/actions/get_auth.js",
+            "title": "Request a JWT access token using your obono username and password.",
+            "description": "Request a JWT access token using your obono username and password.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_auth.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_belege__belegUuid_": {
+            "main": "./lib/actions/get_belege__belegUuid_.js",
+            "title": "Retrieves a particular `Beleg` from the \"Datenerfassungsprotokoll\".",
+            "description": "Retrieves a particular `Beleg` from the \"Datenerfassungsprotokoll\".",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_belege__belegUuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_csv_registrierkassen__registrierkasseUuid__belege": {
+            "main": "./lib/actions/get_export_csv_registrierkassen__registrierkasseUuid__belege.js",
+            "title": "get_export_csv_registrierkassen__registrierkasseUuid__belege",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_csv_registrierkassen__registrierkasseUuid__belege.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_dep131_registrierkassen__registrierkasseUuid__belege": {
+            "main": "./lib/actions/get_export_dep131_registrierkassen__registrierkasseUuid__belege.js",
+            "title": "get_export_dep131_registrierkassen__registrierkasseUuid__belege",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_dep131_registrierkassen__registrierkasseUuid__belege.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_dep7_registrierkassen__registrierkasseUuid__belege": {
+            "main": "./lib/actions/get_export_dep7_registrierkassen__registrierkasseUuid__belege.js",
+            "title": "get_export_dep7_registrierkassen__registrierkasseUuid__belege",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_dep7_registrierkassen__registrierkasseUuid__belege.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_html_belege__belegUuid_": {
+            "main": "./lib/actions/get_export_html_belege__belegUuid_.js",
+            "title": "get_export_html_belege__belegUuid_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_html_belege__belegUuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_pdf_belege__belegUuid_": {
+            "main": "./lib/actions/get_export_pdf_belege__belegUuid_.js",
+            "title": "get_export_pdf_belege__belegUuid_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_pdf_belege__belegUuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_qr_belege__belegUuid_": {
+            "main": "./lib/actions/get_export_qr_belege__belegUuid_.js",
+            "title": "get_export_qr_belege__belegUuid_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_qr_belege__belegUuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_thermal_print_belege__belegUuid_": {
+            "main": "./lib/actions/get_export_thermal_print_belege__belegUuid_.js",
+            "title": "get_export_thermal_print_belege__belegUuid_",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_thermal_print_belege__belegUuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_export_xls_registrierkassen__registrierkasseUuid__belege": {
+            "main": "./lib/actions/get_export_xls_registrierkassen__registrierkasseUuid__belege.js",
+            "title": "get_export_xls_registrierkassen__registrierkasseUuid__belege",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_export_xls_registrierkassen__registrierkasseUuid__belege.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRegistrierkasse": {
+            "main": "./lib/actions/getRegistrierkasse.js",
+            "title": "Returns information about a particular `Registrierkasse`.",
+            "description": "Returns information about a particular `Registrierkasse`.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRegistrierkasse.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createAbschluss": {
+            "main": "./lib/actions/createAbschluss.js",
+            "title": "Generates an `Abschlussbeleg`.",
+            "description": "Generates an `Abschlussbeleg`.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createAbschluss.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getBelege": {
+            "main": "./lib/actions/getBelege.js",
+            "title": "Retrieves the `Beleg` collection from the \"Datenerfassungsprotokoll\".",
+            "description": "Retrieves the `Beleg` collection from the \"Datenerfassungsprotokoll\".",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBelege.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_registrierkassen__registrierkasseUuid__belege__belegUuid_": {
+            "main": "./lib/actions/get_registrierkassen__registrierkasseUuid__belege__belegUuid_.js",
+            "title": "Retrieves a particular `Beleg` from the \"Datenerfassungsprotokoll\".",
+            "description": "Retrieves a particular `Beleg` from the \"Datenerfassungsprotokoll\".",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_registrierkassen__registrierkasseUuid__belege__belegUuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addBeleg": {
+            "main": "./lib/actions/addBeleg.js",
+            "title": "Signs a receipt and stores it in the \"Datenerfassungsprotokoll\".",
+            "description": "Signs a receipt and stores it in the \"Datenerfassungsprotokoll\".",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addBeleg.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDEP": {
+            "main": "./lib/actions/getDEP.js",
+            "title": "Generates a DEP file.",
+            "description": "Generates a DEP file.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDEP.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMonatsbelege": {
+            "main": "./lib/actions/getMonatsbelege.js",
+            "title": "Returns a list of `Monatsbelege`.",
+            "description": "Returns a list of `Monatsbelege`.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMonatsbelege.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

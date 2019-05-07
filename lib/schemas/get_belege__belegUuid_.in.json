@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "belegUuid": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

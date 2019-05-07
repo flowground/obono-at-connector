@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "registrierkasseUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "year": {
+            "type": "integer"
+        },
+        "month": {
+            "type": "integer"
+        }
+    }
+}

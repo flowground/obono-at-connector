@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "belegUuid": {
+            "required": true,
+            "type": "string"
+        },
+        "qr": {
+            "type": "boolean",
+            "default": true
+        },
+        "width": {
+            "type": "integer",
+            "default": 42
+        },
+        "dialect": {
+            "type": "string",
+            "enum": [
+                "esc",
+                "star"
+            ],
+            "default": "esc"
+        },
+        "encoding": {
+            "type": "string",
+            "enum": [
+                "raw",
+                "base64"
+            ],
+            "default": "raw"
+        }
+    }
+}
